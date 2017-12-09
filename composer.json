@@ -1,0 +1,23 @@
+{
+    "name": "sitedigital/estadistica",
+    "description": "Control Estadistico",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sitedigital",
+            "email": "info@sitedigital.com"
+        }
+    ],
+    "autoload": {
+
+        "psr-4": {
+            "Sitedigital\\Estadisca\\": "src/"
+        }
+
+    },
+    "minimum-stability": "dev",
+    "require": {
+
+        "illuminate/support": "~5"
+    }
+}

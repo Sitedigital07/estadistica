@@ -1,5 +1,5 @@
 {
-    "name": "sitedigital/estadistica",
+    "name": "digitalsite/estadistica",
     "description": "Control Estadistico",
     "license": "MIT",
     "authors": [
@@ -11,7 +11,7 @@
     "autoload": {
 
         "psr-4": {
-            "Sitedigital\\Estadisca\\": "src/"
+            "Digitalsite\\Estadisca\\": "src/"
         }
 
     },

@@ -99,7 +99,7 @@ $min_price = Input::has('min_price') ? Input::get('min_price') : 0;
      ->get();
 
 
-  $idiomas = DB::table('estadistica')
+      $idiomas = DB::table('estadistica')
      ->whereBetween('fecha', array($min_price, $max_price))
      ->select('idioma')
      ->selectRaw('count(ip) as sum')

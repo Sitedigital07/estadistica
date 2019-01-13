@@ -60,7 +60,7 @@
                                     <!-- Basic Form Elements Title -->
                                     <div class="block-title">
                                         <div class="block-options pull-right">
-                                            <a href="javascript:void(0)" class="btn btn-alt btn-sm btn-default toggle-bordered enable-tooltip" data-toggle="button" title="Toggles .form-bordered class">No Borders</a>
+                                            
                                         </div>
                                         <h2><strong>Crear</strong> Página</h2>
                                     </div>
@@ -77,8 +77,8 @@
                                  
                                         <div class="form-group form-actions">
                                             <div class="col-md-9 col-md-offset-3">
-                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Submit</button>
-                                                <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Reset</button>
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Crear</button>
+                                                <button type="reset" class="btn btn-sm btn-warning"><i class="fa fa-repeat"></i> Cancelar</button>
                                             </div>
                                         </div>
                                     {{ Form::close() }}

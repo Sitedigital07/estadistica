@@ -59,8 +59,7 @@
                             <div class="block-title">
                                 <h2><strong>Usuarios</strong> Registrados</h2>
                             </div>
-                            <p><a href="https://datatables.net/" target="_blank">DataTables</a> is a plug-in for the Jquery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, which will add advanced interaction controls to any HTML table. It is integrated with template's design and it offers many features such as on-the-fly filtering and variable length pagination.</p>
-
+                            
                             <div class="table-responsive">
                                 <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
                                     <thead>
@@ -71,7 +70,7 @@
                                       
                                     
                                             
-                                            <th class="text-center">Actions</th>
+                                            <th class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>

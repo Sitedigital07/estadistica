@@ -15,7 +15,7 @@ $ga = new gapi("165634436677-96d4oakadbpohnlbeuudboaqjq0277bk@developer.gservice
   $ga->requestReportData(ga_profile_id,array('month'),array('users'),array('month') ,$filter=null,$start_date=$desde,$end_date=$today,$start_index=1,$max_results=12);?>
 
 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
 <script type="text/javascript">
  window.onresize = function(){
  startDrawingChart();};

@@ -21,7 +21,7 @@ $ga = new gapi("165634436677-96d4oakadbpohnlbeuudboaqjq0277bk@developer.gservice
   $max_results=10);
 ?>
 
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
 <script type="text/javascript">
  window.onresize = function(){
  startDrawingChart();};

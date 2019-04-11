@@ -57,54 +57,68 @@
 
  @section('ContenidoSite-01')
 
+
+
+
    <div class="content-header">
      <ul class="nav-horizontal text-center">
- <li>
-       <a href="/gestion/estadistica/bloqueo"><i class="gi gi-parents"></i>IPs</a>
+        <li class="active">
+       <a href="/gestion/estadistica"><i class="gi gi-signal"></i>Estadísticas</a>
       </li>
+      <li>
+       <a href="/gestion/estadistica/bloqueo"><i class="gi gi-eye_close"></i>IPs Bloqueadas</a>
+      </li>
+      
      </ul>
     </div>
 
-<div class="container">
-
-<form action="{{URL::current()}}">
 
 <div class="container">
- 
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-1 pull-right"> 
-<div class="form-group">
-       <br>
-          <div class='input-group pull-right' style="margin-top:-15px">
-           <button class="btn btn-primary btn-sm">Generar</button>
-         
-          </div>
-        </div>
- </div>
+  <div class="col-md-12">
+   <div class="block">
+                  
+    <div class="block-title">
+     <h2><strong>Filtrar</strong> Estadísticas Por Fecha</h2>
+    </div>
+    
+    <div class="table-responsive">
+     <form action="{{URL::current()}}">
 
-
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 pull-right"> 
-   <div class="form-group">
-          <div class='input-group date' id='datetimepicker9'>
-           {{Form::text('max_price',Input::get('max_price'), array('class' => 'form-control input-sm','readonly' => 'readonly','placeholder'=>'Ingrese fecha finalización'))}}
-           <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-          </div>
-        </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+     <div class="form-group">
+      <div class='input-group date' id='datetimepicker7'>
+       {{Form::text('min_price',Input::get('min_price'), array('class' => 'form-control','readonly' => 'readonly','placeholder'=>'Ingrese fecha inicio'))}}
+       <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
       </div>
+     </div>
+    </div>
 
-<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 pull-right"> 
-<div class="form-group">
-          <div class='input-group date' id='datetimepicker7'>
-           {{Form::text('min_price',Input::get('min_price'), array('class' => 'form-control input-sm','readonly' => 'readonly','placeholder'=>'Ingrese fecha inicio'))}}
-           <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-          </div>
-        </div>
- </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
+     <div class="form-group">
+      <div class='input-group date' id='datetimepicker9'>
+       {{Form::text('max_price',Input::get('max_price'), array('class' => 'form-control','readonly' => 'readonly','placeholder'=>'Ingrese fecha finalización'))}}
+       <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+      </div>
+     </div>
+    </div>
 
 
-</div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+     <div class="form-group">
+      <br>
+       <div class='input-group pull-right' style="margin-top:-15px;margin-bottom:15px">
+        <button class="btn btn-primary">Filtrar</button>
+       </div>
+     </div>
+    </div>
 
-</form>
+   </form>
+    </div>
+     </div>                      
+      </div>
+       </div>
 
+<div class="container">
 
 <div class="col-md-12">
                                 <!-- Widget -->
@@ -118,25 +132,26 @@
                                                 <a href="javascript:void(0)" class="widget-icon themed-background">
                                                     <i class="gi gi-coins"></i>
                                                 </a>
-                                                <h3 class="remove-margin-bottom"><strong>{{$visitas}}</strong><br><small>Visitas</small></h3>
+                                                <h3 class="remove-margin-bottom"><strong>
+                                                {{number_format($visitas, 0, ",", ".")}}</strong><br><small>Visitas</small></h3>
                                             </div>
                                             <div class="col-xs-3">
                                                 <a href="javascript:void(0)" class="widget-icon themed-background">
                                                     <i class="gi gi-thumbs_up"></i>
                                                 </a>
-                                                <h3 class="remove-margin-bottom"><strong>{{$nuevousuario}}</strong><br><small>Usuarios Nuevos</small></h3>
+                                                <h3 class="remove-margin-bottom"><strong>{{number_format($nuevousuario, 0, ",", ".")}}</strong><br><small>Usuarios Nuevos</small></h3>
                                             </div>
                                             <div class="col-xs-3">
                                                 <a href="javascript:void(0)" class="widget-icon themed-background">
                                                     <i class="gi gi-thumbs_up"></i>
                                                 </a>
-                                                <h3 class="remove-margin-bottom"><strong>{{$visitas-$nuevousuario}}</strong><br><small>Retorno Usuarios</small></h3>
+                                                <h3 class="remove-margin-bottom"><strong>{{number_format($visitas-$nuevousuario, 0, ",", ".")}}</strong><br><small>Retorno Usuarios</small></h3>
                                             </div>
                                             <div class="col-xs-3">
                                                 <a href="javascript:void(0)" class="widget-icon themed-background">
                                                     <i class="fa fa-ticket"></i>
                                                 </a>
-                                                <h3 class="remove-margin-bottom"><strong>{{number_format($visitas/$conteopagina,2)}}</strong><br><small>PAginas/Vistas</small></h3>
+                                                <h3 class="remove-margin-bottom"><strong>{{number_format($visitas/$conteopagina, 0, ",", ".")}}</strong><br><small>PAginas/Vistas</small></h3>
                                             </div>
                                         </div>
                                     </div>
@@ -160,15 +175,15 @@
                                 <table class="table table-vcenter table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Página</th>
-                                            <th># Visitas</th>    
+                                            <th class="text-primary">Página</th>
+                                            <th class="text-primary"># Visitas</th>    
                                         </tr>
                                     </thead>
                                     <tbody>
                                       @foreach($paginas as $paginas)
                                         <tr>
                                            <td style="width:280px">{{ $paginas->pagina }}</td>
-                                           <td style="width:100px">{{$paginas->sum}}</td>
+                                           <td style="width:100px">{{number_format($paginas->sum, 0, ",", ".")}}</td>
                                         </tr>
                                        @endforeach 
                                     </tbody>
@@ -192,8 +207,8 @@
                                 <table class="table table-vcenter table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Referidos</th>
-                                            <th># Visitas</th>    
+                                            <th class="text-primary">Referidos</th>
+                                            <th class="text-primary"># Visitas</th>    
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -204,7 +219,7 @@
                                             @else
                                            <td style="width:280px">{{ $referidos->referido }}</td>
                                            @endif
-                                           <td style="width:100px">{{ $referidos->sum}}</td>
+                                           <td style="width:100px">{{number_format($referidos->sum, 0, ",", ".")}}</td>
                                         </tr>
                                        @endforeach 
 
@@ -232,15 +247,15 @@
                                 <table class="table table-vcenter table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Ciudades</th>
-                                            <th># Visitas</th>    
+                                            <th class="text-primary">Ciudades</th>
+                                            <th class="text-primary"># Visitas</th>    
                                         </tr>
                                     </thead>
                                     <tbody>
                                        @foreach($ciudades as $ciudades)
                                         <tr>
                                            <td style="width:280px">{{ $ciudades->ciudad }}</td>
-                                           <td style="width:100px">{{ $ciudades->sum}}</td>
+                                           <td style="width:100px">{{number_format($ciudades->sum, 0, ",", ".")}}</td>
                                         </tr>
                                        @endforeach 
                                     </tbody>
@@ -266,15 +281,15 @@
                                 <table class="table table-vcenter table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Lenguaje</th>
-                                            <th># Visitas</th>    
+                                            <th class="text-primary">Lenguaje</th>
+                                            <th class="text-primary"># Visitas</th>    
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($idiomas as $idiomas)
                                         <tr>
                                            <td style="width:280px">{{ $idiomas->idioma }}</td>
-                                           <td style="width:100px">{{ $idiomas->sum}}</td>
+                                           <td style="width:100px">{{number_format( $idiomas->sum, 0, ",", ".")}}</td>
                                         </tr>
                                        @endforeach 
                                     </tbody>

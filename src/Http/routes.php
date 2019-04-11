@@ -52,7 +52,7 @@ Route::get('informe/estadistica', function(){
    return View::make('estadistica::indexa')->with('unitarios', $unitarios);
 });
 
-
+ Route::resource('mensajes/estadisticas', 'Digitalsite\Pagina\Http\WebController@estadistica');
 
 Route::get('gestion/estadistica', function(){
 

@@ -9,11 +9,13 @@
    <div class="content-header">
      <ul class="nav-horizontal text-center">
  <li>
-       <a href="/gestion/estadistica"><i class="gi gi-parents"></i> Estadistica</a>
+       <a href="/gestion/estadistica"><i class="gi gi-signal"></i> Estadistica</a>
       </li>
-
       <li>
-       <a href="/gestion/estadistica/bloqueo"><i class="fa fa-user-plus"></i> Bloquear IPs</a>
+       <a href="/gestion/estadistica/bloqueo"><i class="gi gi-eye_close"></i>IPs Bloqueadas</a>
+      </li>
+      <li class="active">
+       <a href="/gestion/estadistica/crear-block"><i class="gi gi-floppy_remove"></i> Bloquear IPs</a>
       </li>
      </ul>
     </div>
@@ -45,13 +47,6 @@
  </div>
 
 
-
-
-
-
-
-
-
 <div class="container">
   <div class="row">
                             <div class="col-md-12">
@@ -62,7 +57,7 @@
                                         <div class="block-options pull-right">
                                             
                                         </div>
-                                        <h2><strong>Crear</strong> Página</h2>
+                                        <h2><strong>Bloquear</strong> IP</h2>
                                     </div>
                                     <!-- END Form Elements Title -->
                                    
@@ -71,7 +66,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="example-text-input">Crear IP</label>
                                             <div class="col-md-9">
-                                                {{Form::text('ips', '', array('class' => 'form-control','placeholder'=>'Ingrese página','maxlength' => '50' ))}}
+                                                {{Form::text('ips', '', array('class' => 'form-control','placeholder'=>'Ingrese IP','maxlength' => '50' ))}}
                                             </div>
                                         </div>
                                  

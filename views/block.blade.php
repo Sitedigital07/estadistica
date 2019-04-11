@@ -9,11 +9,13 @@
    <div class="content-header">
      <ul class="nav-horizontal text-center">
  <li>
-       <a href="/gestion/estadistica"><i class="gi gi-parents"></i> Estadistica</a>
+       <a href="/gestion/estadistica"><i class="gi gi-signal"></i> Estadistica</a>
       </li>
-
+      <li class="active">
+       <a href="/gestion/estadistica/bloqueo"><i class="gi gi-eye_close"></i>IPs Bloqueadas</a>
+      </li>
       <li>
-       <a href="/gestion/estadistica/crear-block"><i class="fa fa-user-plus"></i> Bloquear IPs</a>
+       <a href="/gestion/estadistica/crear-block"><i class="gi gi-floppy_remove"></i> Bloquear IPs</a>
       </li>
      </ul>
     </div>
@@ -24,21 +26,21 @@
   @if($status=='ok_create')
    <div class="alert alert-success">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Usuario registrado con éxito</strong>
+    <strong>Ip Registrado Con Éxito</strong> CMS...
    </div>
   @endif
 
   @if($status=='ok_delete')
    <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Usuario eliminado con éxito</strong>
+    <strong>IP Eliminada Con Éxito</strong> CMS...
    </div>
   @endif
 
   @if($status=='ok_update')
    <div class="alert alert-warning">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Usuario actualizado con éxito</strong>
+    <strong>IP Actualizado Con Éxito</strong> CMS...
    </div>
   @endif
 
@@ -57,16 +59,16 @@
 
  <div class="block full">
                             <div class="block-title">
-                                <h2><strong>Usuarios</strong> Registrados</h2>
+                                <h2><strong>Ips</strong> Bloqueadas</h2>
                             </div>
                             
                             <div class="table-responsive">
                                 <table id="example-datatable" class="table table-vcenter table-condensed table-bordered">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Id</th>
+                                            <th class="text-center">ID</th>
                                             <th class="text-center">Ip</th>
-                                            <th>E-mail</th>
+                                            <th class="text-center">Estado</th>
                                       
                                     
                                             
@@ -79,7 +81,7 @@
                                         <tr>
                                             <td class="text-center">{{$ips->id}}</td>
                                             <td class="text-center">{{$ips->ip}}</td>
-                                            <td></td>
+                                             <td class="text-center">Bloqueada</td>
                                             
                                             
                                           
@@ -88,7 +90,7 @@
                                               function confirmar ( mensaje ) {
                                               return confirm( mensaje );}
                                             </script>
-                                            <a href="<?=URL::to('gestion/estadistica/eliminar/');?>/{{$ips->id}}" onclick="return confirmar('¿Está seguro que desea eliminar el registro?')"><span id="tup" data-toggle="tooltip" data-placement="bottom" title="Editar Página" class="btn btn-danger"><i class="hi hi-trash sidebar-nav-icon"></i></span></a>
+                                            <a href="<?=URL::to('gestion/estadistica/eliminar/');?>/{{$ips->id}}" onclick="return confirmar('¿Está seguro que desea eliminar el registro?')"><span id="tup" data-toggle="tooltip" data-placement="bottom" title="Eliminar IP" class="btn btn-danger"><i class="hi hi-trash sidebar-nav-icon"></i></span></a>
 
                                             </td>
                                         </tr>

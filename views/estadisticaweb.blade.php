@@ -3,10 +3,13 @@
  @extends ('adminsite.layout')
 
  @section('cabecera')
-    <script src="/estadistica/chartkick.js"></script>
+    <script src="/modulo-estadisticas/js/chartkick.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script>
     <!-- <script src="Chart.bundle.js"></script> -->
-    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+
+ 
+ <script type="text/javascript" src="//www.google.com/jsapi"></script>
+
      <script>
       // Chartkick.configure({language: "de"});
       // Chartkick.configure({mapsApiKey: "test123"})
@@ -78,7 +81,7 @@
    <div class="block">
                   
     <div class="block-title">
-     <h2><strong>Filtrar</strong> Estadísticas Por Fecha</h2>
+     <h2><strong>Filtrar</strong> estadísticas por fecha</h2>
     </div>
     
     <div class="table-responsive">
@@ -87,7 +90,7 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
      <div class="form-group">
       <div class='input-group date' id='datetimepicker7'>
-       {{Form::text('min_price',Input::get('min_price'), array('class' => 'form-control','readonly' => 'readonly','placeholder'=>'Ingrese fecha inicio'))}}
+       {{Form::text('min_price',Input::get('min_price'), array('class' => 'form-control','readonly' => 'readonly','placeholder'=>'Ingrese fecha desde'))}}
        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
       </div>
      </div>
@@ -96,7 +99,7 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> 
      <div class="form-group">
       <div class='input-group date' id='datetimepicker9'>
-       {{Form::text('max_price',Input::get('max_price'), array('class' => 'form-control','readonly' => 'readonly','placeholder'=>'Ingrese fecha finalización'))}}
+       {{Form::text('max_price',Input::get('max_price'), array('class' => 'form-control','readonly' => 'readonly','placeholder'=>'Ingrese fecha hasta'))}}
        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
       </div>
      </div>
@@ -124,7 +127,7 @@
                                 <!-- Widget -->
                                 <div class="widget">
                                     <div class="widget-extra text-center themed-background-dark">
-                                        <h3 class="widget-content-light"><i class="fa fa-arrow-up animation-floating"></i> Estadisticas <strong>Web</strong></h3>
+                                        <h3 class="widget-content-light"><i class="fa fa-arrow-up animation-floating"></i> Estadísticas <strong>web</strong></h3>
                                     </div>
                                     <div class="widget-simple">
                                         <div class="row text-center">
@@ -139,19 +142,19 @@
                                                 <a href="javascript:void(0)" class="widget-icon themed-background">
                                                     <i class="gi gi-thumbs_up"></i>
                                                 </a>
-                                                <h3 class="remove-margin-bottom"><strong>{{number_format($nuevousuario, 0, ",", ".")}}</strong><br><small>Usuarios Nuevos</small></h3>
+                                                <h3 class="remove-margin-bottom"><strong>{{number_format($nuevousuario, 0, ",", ".")}}</strong><br><small>Usuarios nuevos</small></h3>
                                             </div>
                                             <div class="col-xs-3">
                                                 <a href="javascript:void(0)" class="widget-icon themed-background">
                                                     <i class="gi gi-thumbs_up"></i>
                                                 </a>
-                                                <h3 class="remove-margin-bottom"><strong>{{number_format($visitas-$nuevousuario, 0, ",", ".")}}</strong><br><small>Retorno Usuarios</small></h3>
+                                                <h3 class="remove-margin-bottom"><strong>{{number_format($visitas-$nuevousuario, 0, ",", ".")}}</strong><br><small>Retorno usuarios</small></h3>
                                             </div>
                                             <div class="col-xs-3">
                                                 <a href="javascript:void(0)" class="widget-icon themed-background">
                                                     <i class="fa fa-ticket"></i>
                                                 </a>
-                                                <h3 class="remove-margin-bottom"><strong>{{number_format($visitas/$conteopagina, 0, ",", ".")}}</strong><br><small>PAginas/Vistas</small></h3>
+                                                <h3 class="remove-margin-bottom"><strong>{{number_format($visitas/$conteopagina, 0, ",", ".")}}</strong><br><small>Páginas/vistas</small></h3>
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +168,7 @@
  <div class="block">
                             <!-- Responsive Full Title -->
                             <div class="block-title">
-                                <h2><strong>Páginas</strong> Vistas</h2>
+                                <h2><strong>Páginas</strong> vistas</h2>
                             </div>
                             <!-- END Responsive Full Title -->
 
@@ -197,7 +200,7 @@
  <div class="block">
                             <!-- Responsive Full Title -->
                             <div class="block-title">
-                                <h2><strong>Visitas</strong> Referidas</h2>
+                                <h2><strong>Visitas</strong> referidas</h2>
                             </div>
                             <!-- END Responsive Full Title -->
 
@@ -237,7 +240,7 @@
  <div class="block">
                             <!-- Responsive Full Title -->
                             <div class="block-title">
-                                <h2><strong>Visitas</strong> Ciudades</h2>
+                                <h2><strong>Visitas</strong> ciudades</h2>
                             </div>
                             <!-- END Responsive Full Title -->
 
@@ -271,7 +274,7 @@
  <div class="block">
                             <!-- Responsive Full Title -->
                             <div class="block-title">
-                                <h2><strong>Lenguajes</strong> Visitas</h2>
+                                <h2><strong>Lenguajes</strong> visitas</h2>
                             </div>
                             <!-- END Responsive Full Title -->
 
@@ -354,12 +357,11 @@
 
 
 
-   {{ Html::style('Calendario/css/bootstrap-datetimepicker.min.css') }}
    
 
 
-   {{ Html::script('Calendario/jquery/jquery.min.js') }}
-     {{ Html::script('Calendario/bootstrap2/js/bootstrap.min.js') }}
+   {{ Html::script('modulo-estadisticas/js/jquery.min.js') }}
+
   <script type="text/javascript">
 $(document).ready(function(){
     $('#datetimepicker7').datetimepicker({
@@ -380,19 +382,15 @@ $(document).ready(function(){
 </script>
 
 
-     {{ Html::script('Calendario/js/underscore-min.js') }}
-     {{ Html::script('Calendario/js/jstz.min.js') }}
-     {{ Html::script('Calendario/js/es-ES.js') }}
-     {{ Html::script('Calendario/js/calendar.js') }}
-     {{ Html::script('Calendario/js/apps.js') }}
-     {{ Html::script('Calendario/js/moment.min.js') }}
-     {{ Html::script('Calendario/js/bootstrap-datetimepicker.min.js') }}
-     {{ Html::script('Calendario/js/datetime.js') }}
-     {{ Html::script('Calendario/js/validator.js')}}
-     {{ Html::script('//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/js/bootstrapValidator.min.js') }}
-   
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+
+
+
+     {{ Html::script('modulo-estadisticas/js/moment.min.js') }}
+     {{ Html::script('modulo-estadisticas/js/bootstrap-datetimepicker.min.js') }}
+
+
+    
+
 
 @stop
 

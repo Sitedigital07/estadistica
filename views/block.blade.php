@@ -26,21 +26,21 @@
   @if($status=='ok_create')
    <div class="alert alert-success">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>Ip Registrado Con Éxito</strong> CMS...
+    <strong>IP registrada con éxito</strong> CMS...
    </div>
   @endif
 
   @if($status=='ok_delete')
    <div class="alert alert-danger">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>IP Eliminada Con Éxito</strong> CMS...
+    <strong>IP eliminada con éxito</strong> CMS...
    </div>
   @endif
 
   @if($status=='ok_update')
    <div class="alert alert-warning">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <strong>IP Actualizado Con Éxito</strong> CMS...
+    <strong>IP actualizado con éxito</strong> CMS...
    </div>
   @endif
 

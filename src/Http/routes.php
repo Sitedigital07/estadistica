@@ -19,9 +19,9 @@ Route::get('gestion/estadistica/referidos', 'Digitalsite\Estadistica\Http\Estadi
 
 Route::get('gestion/estadistica/bloqueo', 'Digitalsite\Estadistica\Http\EstadisticaController@blocks');
 
-Route::resource('gestion/estadistica/crearbloqueo', 'Digitalsite\Estadistica\Http\EstadisticaController@crearblocks');
+Route::post('gestion/estadistica/crearbloqueo', 'Digitalsite\Estadistica\Http\EstadisticaController@crearblocks');
 
-Route::resource('gestion/estadistica/eliminar', 'Digitalsite\Estadistica\Http\EstadisticaController@eliminar');
+Route::get('gestion/estadistica/eliminar/{id}', 'Digitalsite\Estadistica\Http\EstadisticaController@eliminar');
 
 
 Route::get('gestion/estadistica/bloqueo', 'Digitalsite\Estadistica\Http\EstadisticaController@blocks');
@@ -52,7 +52,6 @@ Route::get('informe/estadistica', function(){
    return View::make('estadistica::indexa')->with('unitarios', $unitarios);
 });
 
- Route::resource('mensajes/estadisticas', 'Digitalsite\Pagina\Http\WebController@estadistica');
 
 Route::get('gestion/estadistica', function(){
 
@@ -128,3 +127,5 @@ $min_price = Input::has('min_price') ? Input::get('min_price') : 0;
 
 
 });
+
+ Route::post('mensajes/estadisticas', 'Digitalsite\Pagina\Http\WebController@estadistica');
